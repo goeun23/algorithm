@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Variables</h1>
+<h2>Creating a Variable</h2>
+<p id="demo"></p>
+<script>
+function bfsSubsetsWithQueueLogging(numbers) {
+    const queue = [{ index: 0, path: [] }];
+    const result = [[]]; // 빈 집합도 부분집합에 포함
+    
+    console.log("🚀 BFS로 모든 부분집합 찾기 시작");
+    console.log(`📊 초기 큐 상태: [${JSON.stringify(queue)}]`);
+    
+    let step = 1;
+    while (queue.length > 0) {
+        const current = queue.shift();
+        const { index, path } = current;
+        
+        console.log(`\n🔄 스텝 ${step++}: 현재 상태 - index: ${index}, path: [${path}]`);
+        console.log(`📊 큐에서 제거 후 상태: [${JSON.stringify(queue)}]`);
+        
+        if (index >= numbers.length) {
+            console.log(`  ⏩ 인덱스(${index})가 배열 길이(${numbers.length})보다 크거나 같음 - 스킵`);
+            continue;
+        }
+        
+        // 현재 요소 선택하지 않는 경우
+        const skipCase = { index: index + 1, path: [...path] };
+        queue.push(skipCase);
+        console.log(`  🔀 [선택 안함] numbers[${index}](${numbers[index]})를 건너뜀`);
+        
+        // 현재 요소 선택하는 경우
+        const newPath = [...path, numbers[index]];
+        const selectCase = { index: index + 1, path: newPath };
+        result.push(newPath);
+        queue.push(selectCase);
+        console.log(`  🔀 [선택함] numbers[${index}](${numbers[index]})를 선택함`);
+        console.log(`  📌 새로운 부분집합 발견: [${newPath}]`);
+        
+        console.log(`📊 업데이트된 큐 상태: [${JSON.stringify(queue)}]`);
+    }
+    
+    console.log("\n🏁 BFS 탐색 완료");
+    console.log(`📋 모든 부분집합: ${JSON.stringify(result)}`);
+    return result;
+}
+
+const numbers = [0, 1];
+console.log("입력 배열:", numbers);
+const subsets = bfsSubsetsWithQueueLogging(numbers);
+</script>

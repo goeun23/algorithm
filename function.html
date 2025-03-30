@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript const</h2>
+<p id="demo"></p>
+
+<script>
+function insertionSortDescending(arr) {
+  let n = arr.length;
+  
+  for (let i = 1; i < n; i++) {
+    let key = arr[i]; // 현재 삽입할 요소
+    let j = i - 1;
+    write(`1.while밖, 현재 삽입할 요소 i : ${i},  j:${j}, key(arr[i]):${key}, arr[j][key와 비교대상이 될 놈], ${arr[j]}, arr[j] > key : ${arr[j] > key}`);
+
+    // key보다 큰 값들은 오른쪽으로 이동
+    while (j >= 0 && arr[j] > key) {
+        write(`-----------------------------------`);
+        write(`2.while진입 j : ${j}, arr[j]:${arr[j]}, key:${key}, arr[j+1] : ${arr[j+1]}`);
+      arr[j + 1] = arr[j];
+      j--;
+      write(`2.5 연산(key와 비교해서 값이 크면 오른쪽으로 이동) : arr[j+1] = arr[j] =>${arr[j+1]}, j-- => ${j}`);
+      write(`3.while끝 j : ${j}, arr[j+1]:${arr[j+1]}, arr[j]: ${arr[j]}, key:${key}`);
+      write(`arr : ${arr}`);
+      write(`-----------------------------------arr[j](${arr[j]}) > key (${key}) => ${arr[j] > key}`);
+    }
+	write(`4.while을 빠져나옴 j : ${j}, arr:${arr}`)
+    // 적절한 위치에 key 삽입
+    arr[j + 1] = key;
+    write(`5.[j+1], arr[${j+1}]에 "while문 시작 전 key(${key})" 삽입하였음 j:${j}, arr[j+1] : ${arr[j+1]},  arr:${arr}`);
+    write(`-----------------------------------`);
+  }
+  write(`6.for문을 빠져나옴: arr : ${arr}`)
+  return arr;
+}
+
+function write(value){
+    document.getElementById("demo").innerHTML += value+'<br/><br/>';
+}
+const cars = insertionSortDescending([6, 2, 4,3, 1, 5]);
+write(cars)
+
+</script>
+</body>
+</html>

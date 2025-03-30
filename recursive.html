@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Variables</h1>
+<h2>Creating a Variable</h2>
+<p id="demo"></p>
+<script>
+    var numbers = [0, 1, 2];
+    var path = [];
+    function dfs(index, path = []) {
+        // path 배열에 index 추가
+        //const currentPath = [...path, index];
+        
+        // 배열 내용을 문자열로 변환하지 않고 배열 자체를 출력
+        console.log("경로:", index);
+        
+        if (index === 2) {
+            console.log("종료 경로:", index);
+            return;
+        }
+        
+        dfs(index + 1, index);
+        console.log("돌아온 경로:", index);
+    }
+
+    dfs(0);
+    
+    
+    function log(message){
+        console.log(message)
+    }
+</script>

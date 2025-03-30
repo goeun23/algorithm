@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function searchInput(weights, days){
+            weights.sort((a,b)=> a-b);
+            let start = 0;
+            let end = weights.length-1;
+            let mid = Math.floor((start+end)/2); // 중간 인덱스
+            let count = 0;
+            let sum = 0;
+            while(start <= end){
+                mid = Math.floor((weights[start]+weights[end])/2); // 중간인덱스
+
+                for(let i =0; i< weights.length; i++){
+                    if(weights[i] <= mid){
+                        // 중간값보다 현재 무게가 작다면
+                        sum += weights[i];
+                    }else{
+                        
+                    }
+                }
+
+        }
+       console.log(searchInsert([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 5)); // 2
+    </script>
+</body>
+</html>
