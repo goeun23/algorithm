@@ -1,0 +1,63 @@
+<html>
+
+<body>
+    <script>
+        /*
+        ▣ 입력예제 1                                   
+        
+        ▣ 출력예제 1
+         
+        */
+        
+        
+        function solution(str){
+            // 내가 작성한 답
+            /*
+            - 📌 문제 이해: 
+            해시에 가장 많이 담긴 값 추출 
+            - 🔍 풀이 방식 파악: 
+            
+            - 🧠 풀이 패턴 기억: 
+            */
+            
+            // -- 내가 작성한 답
+            let hMap = new Map();
+
+            str = [...str];
+            for(let i =0; i< str.length; i++){
+                if(!hMap.get(str[i])){
+                    hMap.set(str[i], 1)
+                }else{
+                    hMap.set(str[i], hMap.get(str[i])+1)
+                }
+            }
+                console.log(Array.from(hMap))
+                var arr = Array.from(hMap);
+                arr = arr.sort((a,b)=> {
+                    return b[1]-a[1];
+                })
+                console.log(arr[0][0])
+            return arr[0][0];
+            // 강의
+            /*
+            - 📌 문제 이해: 
+            
+            - 🧠 풀이 패턴 기억: 
+            
+            
+            // ** 내가 다시 풀기
+            
+            
+            */
+            
+
+            
+            // 강의 
+            
+        }
+
+        console.log(solution("BACBACCACCBDEDE"))
+    </script>
+</body>
+
+</html>

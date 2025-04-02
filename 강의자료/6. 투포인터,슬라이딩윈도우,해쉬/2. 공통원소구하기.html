@@ -1,0 +1,66 @@
+<html>
+
+<body>
+    <script>
+        /*
+        ▣ 입력예제 1                                   
+        
+        ▣ 출력예제 1
+         
+        */
+        
+        
+        function solution(arr){
+            // 내가 작성한 답
+            /*
+            - 📌 문제 이해: 두 배열 합쳐서 sort?
+            - 🔍 풀이 방식 파악: 
+            - 🧠 풀이 패턴 기억: 
+            */
+            
+            // -- 내가 작성한 답
+            
+            // 강의
+            /*
+            - 📌 문제 이해: 
+            
+            - 🧠 풀이 패턴 기억: 
+            */
+            
+            // ** 내가 다시 풀기
+            /*
+            
+            */
+            
+
+            
+            // 강의 
+            let n = arr1.length;
+            let m = arr2.length;
+            let p1 = p2 = 0;
+            while(p1<n && p2 <m){
+                // 누군가 하나가 끝나면 멈춘다. 
+                if(arr1[p1] <= arr2[p2]){
+                    // arr1[p1]을 넣고, p1 을 ++
+                    answer.push(arr1[p1++])
+                }else{
+                    answer.push(arr2[p2++])
+                }
+                
+            }
+            // 남은 원소를 넣어야됨
+            // p1의 원소가 남았다면
+            while(p1<n){
+                answer.push(arr1[p1++])
+            }
+            while(p2<m){
+                answer.push(arr2[p2++])
+            }
+            return answer;
+        }
+
+        console.log(solution([130,135,148,140,145,150,150,153 ]))
+    </script>
+</body>
+
+</html>
