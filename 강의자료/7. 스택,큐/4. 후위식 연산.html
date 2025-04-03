@@ -1,0 +1,92 @@
+<html>
+
+<body>
+    <script>
+        /*
+        ▣ 입력예제 1                                   
+        
+        ▣ 출력예제 1
+         
+        */
+        
+        
+        function solution(str){
+            // 내가 작성한 답
+            /*
+            - 📌 문제 이해: 
+            후위연산자 : 연산자가 피연사자들 뒤에 위치하는 것 
+            // 중위 : (A+b) * (c+d)
+            // 후위 :  ab+cd+*
+            앞에 있는 숫자가 뒤에있는 숫자한테 연산을 당한다. 
+            - 🔍 풀이 방식 파악: 
+                                  
+
+            - 🧠 풀이 패턴 기억: 
+            
+            */
+            
+            // -- 내가 작성한 답
+            
+            // 강의
+            /*
+            - 📌 문제 이해: 
+        
+            - 🔍 풀이 방식 파악: 
+            숫자를 만나면 stack에 push
+            당하는 숫자를 lt
+            행하는 숫자를 rt
+            연산자를 만나는 순간 숫자 두 개를 pop
+            한개는 rt, 한개는 lt, 그 두개의 연산 결과를 stack에 push
+            연산이 끝나면 결과값 하나만 stack에 남는다. 
+            */
+            
+            // ** 내가 다시 풀기
+            const n = arr.length;
+            let stack = [];
+            let lt = 0;
+            for(let i =lt; lt< n; lt++){
+                if(arr[i] >= 0 && arr[i]<=9){
+                    stack.push(arr[i])
+                }else{
+                    //.. lt, rt 콘트롤을 모르겠음
+                }
+            }
+            
+            // 강의 
+            for(let x of str){
+                // 숫자가 아니면 참
+                if(!isNaN(x)){
+                    // 숫자면 
+                    stack.push(Number(x));
+                }else{
+                    // 연산자면
+                    let rt = stack.pop();
+                    let lt = stack.pop();
+                    if(x == '+'){
+                        stack.push(lt+rt);
+                    }else if(x=='-'){
+                        stack.push(lt-rt)
+                    }else if(x == '*'){
+                        stack.push(lt*rt);
+                    }else{
+                        stack.push(lt/rt);
+                    }
+                    // 끝!
+                }
+            }
+            answer = stack[0]
+            return answer;
+            // 나의 코멘트
+            /*
+            lt, rt 는 그저 pop으로 가져오면 되는 것.. 
+            투포인터같이 왔다갔다 하는게 아님. 그냥 변수 left, right의 의미였다. 
+            이것이 한자린지, 두자린지는 중요하지않음
+            */
+        }
+
+        console.log(solution("352+*9-")
+        )
+    </script>
+</body>
+
+</html>

@@ -31,19 +31,29 @@
                     hMap.set(str[i], hMap.get(str[i])+1)
                 }
             }
-                console.log(Array.from(hMap))
+                
                 var arr = Array.from(hMap);
                 arr = arr.sort((a,b)=> {
                     return b[1]-a[1];
                 })
-                console.log(arr[0][0])
+                
             return arr[0][0];
             // 강의
             /*
             - 📌 문제 이해: 
             
             - 🧠 풀이 패턴 기억: 
+            let max = Number.MIN_SAFE_INTEGER;
+            ** map 탐색 
+            for(let [key, val] of hMap){
+                console.log(key, val)
+                if(val > max){
+                    max = val;
+                    answer = key;
+                }
+            }
             
+
             
             // ** 내가 다시 풀기
             

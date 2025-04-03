@@ -1,0 +1,64 @@
+<html>
+
+<body>
+    <script>
+        /*
+        ▣ 입력예제 1                                   
+        
+        ▣ 출력예제 1
+         
+        */
+        
+        
+        function solution(str){
+            // 내가 작성한 답
+            /*
+            - 📌 문제 이해: 프로그래머스에서 풀었던 문제
+            괄호가 들어올때마다 ( 가 들어오면 push 
+            ) 가 들어오면 pop
+            - 🔍 풀이 방식 파악: 
+            - 🧠 풀이 패턴 기억: 
+            */
+            
+            // -- 내가 작성한 답
+            let answer = "YES"
+            str = [...str]
+            let stack = [];
+            for(let i =0; i< str.length; i++){
+                if(str[i] == '('){
+                    stack.push(str[i])
+                } else if(str[i] == ')'){
+                    if(stack.length > 0){
+                        stack.pop();
+                    }else{
+                        answer = "NO"
+                        return 
+                    }
+                }
+            }
+
+            if(stack.length > 0){
+                answer = "NO"
+            }
+
+            return answer;
+            
+            // 강의
+            /*
+            - 📌 문제 이해: 
+            - 🔍 풀이 방식 파악: 
+            - 🧠 풀이 패턴 기억: 
+            */
+            
+            // ** 내가 다시 풀기
+
+            
+            // 강의 
+            // 내가 푼 것과 같다. 
+        }
+
+        console.log(solution("(()(()))(()"))
+    </script>
+</body>
+
+</html>

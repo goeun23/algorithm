@@ -1,0 +1,68 @@
+<html>
+
+<body>
+    <script>
+        /*
+        ▣ 입력예제 1                                   
+        
+        ▣ 출력예제 1
+         
+        */
+        
+        
+        function solution(N, K){
+            // 내가 작성한 답
+            /*
+            - 📌 문제 이해: 
+            arr[i]번째의 원소를 제거하면 되는데 
+            이걸 stack이나 queue로 푸는건 가늠이 안됨..
+            - 🔍 풀이 방식 파악: 
+
+            - 🧠 풀이 패턴 기억: 
+            
+            */
+            
+            // -- 내가 작성한 답
+            
+            // 강의
+            /*
+            - 📌 문제 이해:
+            큐라는 자료구조를 사용한다. 
+            큐 = 먼저 들어간게 먼저 나온다. 
+            들어오는 입구와 나오는 출구가 다르다. (스택과 반대)
+            // 이걸 어떻게 큐로? 큐도 배열을 사용한다. 
+            큐에 모든 원소를 push 
+            k-1만큼 for문을 돌면서 앞에서 빠진 원소를 큐의 맨 뒤에 push
+            - 🔍 풀이 방식 파악: 
+            
+            */
+            
+            // ** 내가 다시 풀기
+            var queue = [];
+            for(let i = 1; i< N+1; i++){
+                queue.push(i);
+            }
+            
+            while(queue.length > 1){
+                for(let i = 0; i<K-1; i++){
+                    const first = queue.shift();
+                    queue.push(first);
+                }    
+                const poped = queue.shift();
+            }
+            return queue[0];
+            
+
+            /*
+            [나의 코멘트]
+            큐로 연결된- 빙글빙글 돌아가는 데이터는 shift -> push 해준다. 
+            
+            */
+        }
+
+        console.log(solution(8,3)
+        )
+    </script>
+</body>
+
+</html>
